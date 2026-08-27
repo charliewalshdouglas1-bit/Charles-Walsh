@@ -1,0 +1,225 @@
+:root {
+    --stone: #d0cbb5f2;
+    --cream: #f4f2eb;
+    --black: #11110f;
+    --grey: #68665e;
+
+    --page-padding: clamp(24px, 5vw, 80px);
+}
+
+
+/* RESET */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    background: var(--cream);
+    color: var(--black);
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+
+/* HEADER */
+
+.site-header {
+    height: 110px;
+
+    padding: 0 var(--page-padding);
+
+    background: var(--stone);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* CHARLES WALSH */
+
+.brand {
+    color: var(--black);
+    text-decoration: none;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 27px;
+
+    letter-spacing: -0.02em;
+}
+
+
+/* NAVIGATION */
+
+.nav {
+    display: flex;
+    gap: 28px;
+}
+
+.nav a {
+    color: var(--black);
+    text-decoration: none;
+
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+}
+
+
+/* HERO */
+
+.hero {
+    width: 100%;
+    height: 78vh;
+
+    overflow: hidden;
+
+    background: #aaa;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* INTRO */
+
+.intro {
+    padding:
+        120px
+        var(--page-padding)
+        150px;
+}
+
+.eyebrow {
+    margin: 0 0 35px;
+
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+}
+
+
+/* BIG NAME */
+
+h1 {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(85px, 13vw, 200px);
+    font-weight: 400;
+
+    line-height: 0.78;
+
+    letter-spacing: -0.055em;
+}
+
+
+.intro-text {
+    max-width: 550px;
+
+    margin-top: 65px;
+
+    font-size: 19px;
+    line-height: 1.6;
+}
+
+
+.explore {
+    display: inline-block;
+
+    margin-top: 25px;
+    padding-bottom: 5px;
+
+    color: var(--black);
+    text-decoration: none;
+
+    border-bottom: 1px solid var(--black);
+}
+
+
+/* MAIN SECTIONS */
+
+.content-section {
+    min-height: 550px;
+
+    padding:
+        90px
+        var(--page-padding);
+
+    border-top: 1px solid rgba(17, 17, 15, 0.2);
+}
+
+
+.section-number {
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: var(--grey);
+
+    font-size: 15px;
+}
+
+
+h2 {
+    margin: 25px 0 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(70px, 10vw, 150px);
+    font-weight: 400;
+
+    letter-spacing: -0.055em;
+}
+
+
+/* CONNECT */
+
+.connect {
+    background: var(--black);
+    color: var(--cream);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+
+    .site-header {
+        height: auto;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .hero {
+        height: 65vh;
+    }
+
+    .intro {
+        padding-top: 80px;
+        padding-bottom: 100px;
+    }
+
+    .content-section {
+        min-height: 400px;
+    }
+}
