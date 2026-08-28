@@ -1,43 +1,18 @@
 :root {
     --stone: #d0cbb5f2;
-    --cream: #f4f2eb;
+    --cream: #f4f1e8;
     --black: #11110f;
-    --grey: #68665e;
+    --muted: #747168;
+    --line: rgba(17, 17, 15, 0.18);
 
-    --page-padding: clamp(24px, 5vw, 80px);
-}
-
-
-/* RESET */
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-
-    background: var(--cream);
-    color: var(--black);
-
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-img {
-    display: block;
-    width: 100%;
+    --page-padding: clamp(24px, 5vw, 78px);
 }
 
 
 /* HEADER */
 
 .site-header {
-    height: 110px;
-
+    min-height: 118px;
     padding: 0 var(--page-padding);
 
     background: var(--stone);
@@ -45,36 +20,57 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    border-bottom: 1px solid rgba(17, 17, 15, 0.12);
 }
-
-
-/* CHARLES WALSH */
 
 .brand {
     color: var(--black);
     text-decoration: none;
 
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 27px;
+    font-size: 24px;
+    font-weight: 400;
 
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
 }
-
-
-/* NAVIGATION */
 
 .nav {
     display: flex;
-    gap: 28px;
+    align-items: center;
+    gap: clamp(18px, 2.2vw, 36px);
 }
 
 .nav a {
+    position: relative;
+
     color: var(--black);
     text-decoration: none;
 
-    font-size: 11px;
+    font-size: 10px;
+    font-weight: 500;
+
     text-transform: uppercase;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.16em;
+}
+
+.nav a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--black);
+
+    transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+    width: 100%;
 }
 
 
@@ -82,11 +78,14 @@ img {
 
 .hero {
     width: 100%;
-    height: 78vh;
+    height: calc(100vh - 118px);
+
+    min-height: 650px;
+    max-height: 1000px;
 
     overflow: hidden;
 
-    background: #aaa;
+    background: #222;
 }
 
 .hero img {
@@ -94,132 +93,91 @@ img {
     height: 100%;
 
     object-fit: cover;
+
+    /*
+       You can adjust this later depending
+       on where you want yourself positioned.
+    */
+    object-position: center center;
 }
 
 
 /* INTRO */
 
 .intro {
+    position: relative;
+
     padding:
-        120px
+        clamp(90px, 10vw, 160px)
         var(--page-padding)
-        150px;
+        clamp(110px, 12vw, 190px);
+
+    background: var(--cream);
 }
 
 .eyebrow {
-    margin: 0 0 35px;
+    margin: 0 0 42px;
 
-    font-size: 11px;
+    font-size: 10px;
+    font-weight: 500;
+
+    letter-spacing: 0.34em;
     text-transform: uppercase;
-    letter-spacing: 0.3em;
 }
 
-
-/* BIG NAME */
-
 h1 {
+    max-width: 1100px;
+
     margin: 0;
 
     font-family: Georgia, "Times New Roman", serif;
-
-    font-size: clamp(85px, 13vw, 200px);
+    font-size: clamp(80px, 13vw, 205px);
     font-weight: 400;
 
     line-height: 0.78;
 
-    letter-spacing: -0.055em;
+    letter-spacing: -0.06em;
 }
-
 
 .intro-text {
-    max-width: 550px;
+    max-width: 560px;
 
-    margin-top: 65px;
+    margin:
+        clamp(60px, 7vw, 100px)
+        0
+        0
+        auto;
 
-    font-size: 19px;
-    line-height: 1.6;
+    font-size: clamp(17px, 1.4vw, 21px);
+    line-height: 1.55;
+
+    letter-spacing: -0.015em;
 }
 
-
 .explore {
-    display: inline-block;
+    display: block;
 
-    margin-top: 25px;
-    padding-bottom: 5px;
+    width: fit-content;
+
+    margin:
+        30px
+        0
+        0
+        auto;
+
+    padding-bottom: 7px;
 
     color: var(--black);
     text-decoration: none;
 
+    font-size: 12px;
+    letter-spacing: 0.05em;
+
     border-bottom: 1px solid var(--black);
+
+    transition: opacity 0.25s ease;
 }
 
-
-/* MAIN SECTIONS */
-
-.content-section {
-    min-height: 550px;
-
-    padding:
-        90px
-        var(--page-padding);
-
-    border-top: 1px solid rgba(17, 17, 15, 0.2);
-}
-
-
-.section-number {
-    font-family: Georgia, "Times New Roman", serif;
-
-    color: var(--grey);
-
-    font-size: 15px;
-}
-
-
-h2 {
-    margin: 25px 0 0;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: clamp(70px, 10vw, 150px);
-    font-weight: 400;
-
-    letter-spacing: -0.055em;
-}
-
-
-/* CONNECT */
-
-.connect {
-    background: var(--black);
-    color: var(--cream);
-}
-
-
-/* MOBILE */
-
-@media (max-width: 850px) {
-
-    .site-header {
-        height: auto;
-        padding-top: 25px;
-        padding-bottom: 25px;
-    }
-
-    .nav {
-        display: none;
-    }
-
-    .hero {
-        height: 65vh;
-    }
-
-    .intro {
-        padding-top: 80px;
-        padding-bottom: 100px;
-    }
-
-    .content-section {
-        min-height: 400px;
-    }
+.explore:hover {
+    opacity: 0.5;
 }
